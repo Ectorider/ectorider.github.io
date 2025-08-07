@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,459 +9,88 @@
   <meta name="author" content="Antoine Semblat">
 
   <link rel="shortcut icon" href="assets/icon.ico" type="image/x-icon">
-	<link rel="icon" href="assets/icon.ico" type="image/x-icon">
+  <link rel="icon" href="assets/icon.ico" type="image/x-icon">
 
   <title>Ectorider</title>
-  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Boogaloo&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --orange-bg: url('assets/T_stripes_pattern.png');
-      --blue-bg: url('assets/T_stripes_pattern2.png');
-      --font-title: 'Bangers', cursive;
-      --font-body: 'Boogaloo', cursive;
-    }
-
-    body {
-      margin: 0;
-      font-family: var(--font-body);
-      color: white;
-      font-size: 2rem;
-      scroll-behavior: smooth;
-    }
-
-    section {
-      padding: 80px 20px;
-      text-align: center;
-    }
-
-    .myVideo {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: 1;
-    transform: translate(-50%, -50%) scale(1.2);
-    object-fit: cover;
-    filter: brightness(0.5) blur(10px);
-    }
-
-    .overlay-content {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  color: white;
-  padding: 20px;
-}
-
-.overlay-content img {
-  max-width: 500px;
-  height: auto;
-  margin-bottom: 10px;
-}
-
-    .video-header {
-    position: relative;
-    height: 40vh;
-    overflow: hidden; 
-    }
-
-
-    .button_demo {
-        filter: drop-shadow(5px 5px 0px #000000);
-      background: url("assets/button.png") no-repeat center center/cover;
-      color:white;
-      padding: 20px 70px;
-      margin-top: 50px;
-      border: none;
-      font-size: 2rem;
-      cursor: pointer;
-      font-family: var(--font-title);
-      text-decoration: none;
-      display: inline-flex;
-      transition: all 0.3s ease;
-      width: fit-content;
-    }
-
-    .button_demo:hover {
-      background: url("assets/button_hover.png") no-repeat center center/cover;
-      color: white;
-      transform: scale(1.1);
-      transition: all 0.3s ease;
-    }
-
-    .social_links {
-      display: inline-flex;;
-      align-items: flex-start;
-      justify-content: center;
-      
-      background-color: #0000009a;
-      border-radius: 25px;
-
-      max-width: fit-content;
-    }
-
-
-
-
-    .blue-section {
-      background-image: var(--blue-bg);
-      background-size: cover;
-      background-repeat: repeat;
-    }
-
-    .orange-section {
-      background-image: var(--orange-bg);
-      background-size: cover;
-      background-repeat: repeat;
-    }
-
-    .trailer-description {
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap:50px;
-    }
-
-    .trailer {
-      width: 560px;
-      height:100%;
-    }
-
-    .trailer iframe {
-      max-width: 100%;
-      width: 560px;
-      height: 315px;
-      border: none;
-    }
-
-    .description {
-      max-width: 650px;
-      height: 100%;
-    }
-
-    .description p {
-      font-size: 1.5rem;
-      padding: 30px;
-      background-color: #0000009a;
-      border-radius: 25px;
-    }
-
-
-    .email-input {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 20px;    
-      margin-top:0px;
-      margin-bottom: 50px;
-    }
-
-    .email-subscription p {
-      max-width: 650px;
-      height: 100%;
-
-      display: inline-flex;
-
-      font-size: 1.5rem;
-      padding: 30px;
-      background-color: #0000009a;
-      border-radius: 25px;
-      margin-bottom: 0px;
-    }
-
-
-
-    #email {
-      
-      margin-top: 20px;
-      margin-bottom: 50px;
-      border-radius: 25px;
-      padding: 10px;
-      font-size: 1.5rem;
-      width: 300px;
-      border: none;
-      background-color: #ffffff;
-      color: #000000;
-      font-family: var(--font-body);
-    }
-
-    #subcribe {
-      margin-top: 20px;
-      padding: 10px 60px;
-      font-size: 1.5rem;
-      border: none;
-       filter: drop-shadow(5px 5px 0px #000000);
-      background: url('assets/button.png') no-repeat center center/cover;
-      color:white;
-      cursor: pointer;
-      font-family: var(--font-body);
-      transition: all 0.3s ease;
-    }
-
-    #subcribe:hover {
-      background: url('assets/button_hover.png') no-repeat center center/cover;
-      color: white;
-      transform: scale(1.1);
-      transition: all 0.3s ease;
-    }
-
-
-    h2 {
-      filter: drop-shadow(3px 3px 0px #0000008e);
-      font-family: var(--font-title);
-      font-size: 2.5rem;
-      margin-bottom: 30px;
-      margin-top:0px;
-      letter-spacing: 1.2px;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    ul li {
-      margin: 10px 0;
-      font-size: 1.2rem;
-    }
-
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 20px;
-    }
-
-    .gallery img {
-      width: 250px;
-      height: auto;
-      border-radius: 10px;
-      cursor: zoom-in;
-      transition: all 0.3s ease;
-    }
-
-    .gallery img:hover {
-      scale: 1.2;
-      transition: all 0.3s ease;
-    }
-
-    .social_icon {
-      padding: 20px 30px;
-      border: none;
-      cursor: pointer;
-      text-decoration: none;
-
-      background:none;
-    }
-
-    .social_icon:hover {
-        transform:scale(1.5);
-        transition: all 0.2s ease;
-    }
-
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2.5rem;
-      }
-
-      .hero p {
-        font-size: 1rem;
-      }
-
-      iframe {
-        width: 100%;
-        height: auto;
-      }
-    }
-
-
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 3; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
-}
-
-/* Modal Content (Image) */
-.modal-content {
-  margin: auto;
-  display: block;
-  width: 80%;
-  max-width: 700px;
-  
-}
-
-/* Caption of Modal Image (Image Text) - Same Width as the Image */
-#caption {
-  margin: auto;
-  display: block;
-  width: 80%;
-  max-width: 700px;
-  text-align: center;
-  color: #ccc;
-  padding: 10px 0;
-  height: 150px;
-}
-
-/* Add Animation - Zoom in the Modal */
-.modal-content, #caption {
-  animation-name: zoom;
-  animation-duration: 0.6s;
-}
-
-@keyframes zoom {
-  from {transform:scale(0)}
-  to {transform:scale(1)}
-}
-
-/* The Close Button */
-.close {
-  position: absolute;
-  top: 15px;
-  right: 35px;
-  color: #f1f1f1;
-  font-size: 40px;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.close:hover,
-.close:focus {
-  color: #bbb;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-/* 100% Image Width on Smaller Screens */
-@media only screen and (max-width: 700px){
-  .modal-content {
-    width: 100%;
-  }
-}
-</style>
-
-
-
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Boogaloo&display=swap" rel="stylesheet" />
+  <link href="style.css" rel="stylesheet" />
+  <link href="modal.css" rel="stylesheet" />
 </head>
-
-
 
 <body>
   <section class="video-header" autoplay muted loop>
     <video autoplay muted loop class="myVideo">
-  <source src="assets/BG.webm" type="video/mp4">
-</video>
- <div class="overlay-content">
-    <img src="assets/Ectorider logo.png" alt="Ectorider" style="filter:drop-shadow(5px 5px 0px #000000);">
-    <img src="assets/T_artwork.PNG" alt="Ectorider" style="filter:drop-shadow(5px 5px 0px #000000);">
-</div>
-    
+      <source src="assets/BG.webm" type="video/mp4">
+    </video>
+    <div class="overlay-content">
+      <img src="assets/Ectorider logo.png" alt="Ectorider" class="logo">
+      <img src="assets/T_artwork.PNG" alt="Ectorider" class="hero">
+    </div>
   </section>
 
-  <section class="blue-section">
+  <section class="content-section blue">
     <div class="trailer-description">
-      <div class="trailer"><iframe width="560" height="315" src="https://www.youtube.com/embed/yGj3HsFgJKk" allowfullscreen></iframe></iframe></div>
-      <div class="description">  
-            <h2>Find the Ectomorphs as fast as you can!</h2>
-            <p>Ectorider is a fast paced action game mixing platformer, third person shooter and racing.</br></br>Inspired by Sonic, Klonoa and Trackmania, this game will make you travel across levels at full speed and challenge you by combining your platform and shooting skills.</p>
-        </div>
-        
-        
+      <div class="trailer"><iframe width="560" height="315" src="https://www.youtube.com/embed/yGj3HsFgJKk"
+          allowfullscreen></iframe></iframe></div>
+      <div class="description">
+        <h2>Find the Ectomorphs as fast as you can!</h2>
+        <p>Ectorider is a fast paced action game mixing platformer, third person shooter and racing.</br></br>Inspired
+          by Sonic, Klonoa and Trackmania, this game will make you travel across levels at full speed and challenge you
+          by combining your platform and shooting skills.</p>
+      </div>
     </div>
 
     <a href="https://taldius.itch.io" target="_blank" rel="noopener noreferrer" class="button_demo">Play the Demo</a>
-</section>
+  </section>
 
-  <section class="orange-section">
+  <section class="content-section orange">
     <h2>Medias</h2>
-    
+
     <div class="gallery">
-      <img class="small-image" src="assets/screenshot_1.png" alt="Screenshot 1" >
-      <img class="small-image" src="assets/screenshot_2.png" alt="Screenshot 2" >
-      <img class="small-image" src="assets/screenshot_3.png" alt="Screenshot 3" >
-      <img class="small-image" src="assets/screenshot_4.png" alt="Screenshot 4" >
-      <img class="small-image" src="assets/screenshot_5.png" alt="Screenshot 5" >
-      <img class="small-image" src="assets/screenshot_6.png" alt="Screenshot 6" >
+      <img class="small-image" src="assets/screenshot_1.png" alt="Screenshot 1">
+      <img class="small-image" src="assets/screenshot_2.png" alt="Screenshot 2">
+      <img class="small-image" src="assets/screenshot_3.png" alt="Screenshot 3">
+      <img class="small-image" src="assets/screenshot_4.png" alt="Screenshot 4">
+      <img class="small-image" src="assets/screenshot_5.png" alt="Screenshot 5">
+      <img class="small-image" src="assets/screenshot_6.png" alt="Screenshot 6">
     </div>
   </section>
 
-  <section class="blue-section">
-    
+  <section class="content-section blue">
     <div class="email-subscription">
       <h2>Join the Riders Club</h2>
-      <p>Subscribe to our newsletter to get the latest news about Ectorider, including updates, new features, and more!</p>
+      <p>Subscribe to our newsletter to get the latest news about Ectorider, including updates, new features, and more!
+      </p>
       <div class="email-input">
         <!-- <form action="https://app.kit.com/forms/8403172/subscriptions" method="POST">
           <input type="email" id="email" name="email" placeholder="Enter your email..." required>
           <input type="submit" id="subcribe" value="Subscribe">
         </form>-->
         <script async data-uid="9407432bd5" src="https://taldius.kit.com/9407432bd5/index.js"></script>
-       </div>
+      </div>
 
-    <h2>Social links</h2>
-    <div class="social_links">
-      <a href="https://x.com/Taldiuz" class="social_icon" ><img src="assets/x_icon.png" alt="HTML tutorial" style="width:42px;height:42px;"></a>
-      <a href="https://discord.gg/zEH2HuR5" class="social_icon" ><img src="assets/discord_icon.png" alt="HTML tutorial" style="width:42px;height:42px;"></a>
-      <a href="https://www.tiktok.com/@ectorider" class="social_icon" ><img src="assets/tiktok_icon.png" alt="HTML tutorial" style="width:42px;height:42px;"></a>
-    </div>
-</section>
+      <h2>Social links</h2>
+      <div class="social_links">
+        <a href="https://x.com/Taldiuz" class="social_icon"><img src="assets/x_icon.png" alt="HTML tutorial"
+            style="width:42px;height:42px;"></a>
+        <a href="https://discord.gg/zEH2HuR5" class="social_icon"><img src="assets/discord_icon.png" alt="HTML tutorial"
+            style="width:42px;height:42px;"></a>
+        <a href="https://www.tiktok.com/@ectorider" class="social_icon"><img src="assets/tiktok_icon.png"
+            alt="HTML tutorial" style="width:42px;height:42px;"></a>
+      </div>
+  </section>
 
-<!-- The Modal -->
-<div id="myModal" class="modal">
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
 
-  <!-- The Close Button -->
-  <span class="close">&times;</span>
+    <!-- The Close Button -->
+    <span class="close">&times;</span>
 
-  <!-- Modal Content (The Image) -->
-  <img class="modal-content" id="img01">
-</div>
-
+    <!-- Modal Content (The Image) -->
+    <img class="modal-content" id="img01">
+  </div>
 </body>
+
+<script src="modal.js" lang="js"></script>
+
 </html>
-
-<script>  
-var modal = document.getElementById("myModal");
-
-// Get the image and insert it inside the modal - use its "alt" text as a caption
-var imgArray = document.querySelectorAll(".small-image");
-var modalImg = document.getElementById("img01");
-var captionText = document.getElementById("caption");
-
-imgArray.forEach(img => {
-  console.log(img);
-
-  img.onclick = function(){
-  modal.style.display = "block";
-  modalImg.src = this.src;
-  captionText.innerHTML = this.alt;
-}
-});
-
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
-
-modal.onclick = function() {
-  modal.style.display = "none";
-}
-
-</script>
