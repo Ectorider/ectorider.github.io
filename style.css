@@ -76,7 +76,7 @@ section {
   text-decoration: none;
   display: inline-flex;
   transition: all 0.3s ease;
-  width: fit-content;
+  width: 500px;
 
   &:hover {
     background: url("assets/button_hover.png") no-repeat center center/cover;
@@ -249,3 +249,4 @@ ul {
     transition: all 0.2s ease;
   }
 }
+
