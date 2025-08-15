@@ -67,16 +67,19 @@ section {
   filter: drop-shadow(5px 5px 0px #000000);
   background: url("assets/button.png") no-repeat center center/cover;
   color: white;
-  padding: 20px 70px;
+  padding-top: 25px;
   margin-top: 50px;
   border: none;
   font-size: 2rem;
   cursor: pointer;
   font-family: var(--font-title);
+  justify-content: center;
+  text-align:center;
   text-decoration: none;
   display: inline-flex;
   transition: all 0.3s ease;
-  width: 500px;
+  width: 350px;
+  height: 60px;
 
   &:hover {
     background: url("assets/button_hover.png") no-repeat center center/cover;
@@ -249,4 +252,5 @@ ul {
     transition: all 0.2s ease;
   }
 }
+
 
