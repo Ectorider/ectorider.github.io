@@ -43,6 +43,12 @@ section {
   }
 }
 
+@media (min-width: 700px) {
+    .features:nth-child(3) {
+      flex-direction: row-reverse;
+    }
+  }
+
 .video-header {
   position: relative;
   height: 40vh;
@@ -135,6 +141,10 @@ section {
 .description {
   max-width: 650px;
   height: 100%;
+
+  h2 {
+    font-size: 2.15rem;
+  }
 }
 
 .description p {
@@ -142,7 +152,47 @@ section {
   padding: 30px;
   background-color: #0000009a;
   border-radius: 25px;
+  text-align: justify;
 }
+
+.features {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 50px;
+  margin-bottom: 50px;
+
+}
+
+.features-video {
+  video {
+    max-width: 100%;
+    width: 400px;
+    height: 100%;
+    border:none;
+    border-radius: 25px;
+  }
+}
+
+.features-description {
+  max-width: 500px;
+  height: 100%;
+  padding: 30px;
+  background-color: #0000009a;
+  border-radius: 25px;
+  
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1.5rem;
+    text-align: justify;
+  }
+}
+
 
 .email-input {
   display: flex;
