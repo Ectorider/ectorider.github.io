@@ -47,6 +47,9 @@ section {
     .features:nth-child(3) {
       flex-direction: row-reverse;
     }
+  .features:nth-child(5) {
+      flex-direction: row-reverse;
+    }
   }
 
 .video-header {
@@ -303,6 +306,7 @@ ul {
     transition: all 0.2s ease;
   }
 }
+
 
 
 
