@@ -255,7 +255,7 @@
         }
     </style>
 </head>
-<body class="lang-fr">
+<body class="lang-en">
 
     <div class="container">
         <header>
@@ -381,8 +381,7 @@
                         <span class="lang-en">Trailer</span>
                     </h2>
                     <div class="video-container">
-                        <!-- Remplacez YOUTUBE_VIDEO_ID par l'identifiant de votre vidéo YouTube -->
-                        <iframe src="https://www.youtube-nocookie.com/embed/YOUTUBE_VIDEO_ID" title="Ectorider Trailer" allowfullscreen></iframe>
+                        <iframe src="https://www.youtube-nocookie.com/embed/dtybs3FPH7o" title="Ectorider Trailer" allowfullscreen></iframe>
                     </div>
                 </section>
 
@@ -414,8 +413,8 @@
                 <!-- Logos -->
                 <section>
                     <h2>Logos</h2>
-                    <p class="lang-fr" style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1rem;">Logos PNG sur fond transparent, visuels clés et assets haute résolution.</p>
-                    <p class="lang-en" style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1rem;">Transparent logo PNGs, key art banners, and high-resolution media assets.</p>
+                    <p class="lang-fr" style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1rem;">Logos PNG sur fond transparent</p>
+                    <p class="lang-en" style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1rem;">Transparent logo PNGs</p>
                     
                     <div class="gallery">
                         <a href="../assets/Ectorider logo.png" target="_blank"><img src="../assets/Ectorider logo.png" alt="Ectorider Logo"></a>
@@ -501,7 +500,7 @@
 
         // Détection initiale : Préférence enregistrée OU langue du navigateur (FR sinon EN par défaut)
         const savedLang = localStorage.getItem('ectorider_press_lang');
-        const defaultLang = savedLang || (navigator.language.startsWith('fr') ? 'fr' : 'en');
+        const defaultLang = savedLang || (navigator.language.startsWith('en') ? 'fr' : 'en');
         setLanguage(defaultLang);
     </script>
 </body>
