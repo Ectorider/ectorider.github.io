@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ectorider — Press Kit / Kit Presse</title>
+    <style>
+        :root {
+            --bg-color: #0b0c10;
+            --card-bg: #13151c;
+            --text-main: #e0e6ed;
+            --text-muted: #94a3b8;
+            --accent: #00e5ff;
+            --accent-hover: #33ebff;
+            --border: #1e293b;
+            --max-width: 1100px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Gestion de l'affichage multilingue */
+        body.lang-en .lang-fr { display: none !important; }
+        body.lang-fr .lang-en { display: none !important; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            color: #fff;
+        }
+
+        header p {
+            color: var(--accent);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-top: 0.25rem;
+        }
+
+        /* Boutons Switch de langue */
+        .lang-switch {
+            display: flex;
+            gap: 0.5rem;
+            background: var(--card-bg);
+            padding: 0.3rem;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            padding: 0.35rem 0.75rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 0.85rem;
+            transition: all 0.2s ease;
+        }
+
+        .lang-btn:hover {
+            color: #fff;
+        }
+
+        .lang-btn.active {
+            background: var(--accent);
+            color: #000;
+        }
+
+        .layout {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 2.5rem;
+        }
+
+        @media (max-width: 800px) {
+            .layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Sidebar / Factsheet */
+        aside {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            height: fit-content;
+        }
+
+        aside h3 {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .fact-item {
+            margin-bottom: 1rem;
+        }
+
+        .fact-item strong {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        .fact-item a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .fact-item a:hover {
+            text-decoration: underline;
+        }
+
+        .btn-download {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background: var(--accent);
+            color: #000;
+            font-weight: 700;
+            padding: 0.75rem 1rem;
+            border-radius: 6px;
+            text-decoration: none;
+            margin-top: 1.5rem;
+            transition: background 0.2s;
+        }
+
+        .btn-download:hover {
+            background: var(--accent-hover);
+        }
+
+        /* Main Content */
+        main section {
+            margin-bottom: 3rem;
+        }
+
+        main h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.5rem;
+        }
+
+        .description p {
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        ul.features {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        ul.features li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-main);
+        }
+
+        ul.features li::before {
+            content: "✦";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        /* Video Embed */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* Ratio 16:9 */
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+            background: #000;
+            border: 1px solid var(--border);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Screenshot Grid */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 1rem;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            object-fit: cover;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.02);
+            border-color: var(--accent);
+        }
+
+        footer {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        footer a {
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+<body class="lang-fr">
+
+    <div class="container">
+        <header>
+            <div>
+                <h1>Ectorider</h1>
+                <p>
+                    <span class="lang-fr">Kit Presse</span>
+                    <span class="lang-en">Press Kit</span>
+                </p>
+            </div>
+            
+            <!-- Sélecteur de langue -->
+            <div class="lang-switch">
+                <button class="lang-btn" data-lang="fr" onclick="setLanguage('fr')">FR</button>
+                <button class="lang-btn" data-lang="en" onclick="setLanguage('en')">EN</button>
+            </div>
+        </header>
+
+        <div class="layout">
+            <!-- Sidebar / Factsheet -->
+            <aside>
+                <h3>
+                    <span class="lang-fr">Fiche Technique</span>
+                    <span class="lang-en">Factsheet</span>
+                </h3>
+                
+                <div class="fact-item">
+                    <strong>
+                        <span class="lang-fr">Développeur</span>
+                        <span class="lang-en">Developer</span>
+                    </strong>
+                    <span>Taldius</span>
+                </div>
+
+                <div class="fact-item">
+                    <strong>
+                        <span class="lang-fr">Date de sortie</span>
+                        <span class="lang-en">Release Date</span>
+                    </strong>
+                    <span>
+                        <span class="lang-fr">À venir</span>
+                        <span class="lang-en">TBA</span>
+                    </span>
+                </div>
+
+                <div class="fact-item">
+                    <strong>
+                        <span class="lang-fr">Plateformes</span>
+                        <span class="lang-en">Platforms</span>
+                    </strong>
+                    <span>PC (Steam)</span>
+                </div>
+
+                <div class="fact-item">
+                    <strong>
+                        <span class="lang-fr">Site web</span>
+                        <span class="lang-en">Website</span>
+                    </strong>
+                    <a href="https://www.ectorider.com" target="_blank">ectorider.com</a>
+                </div>
+
+                <div class="fact-item">
+                    <strong>Contact</strong>
+                    <a href="mailto:contact@taldius.com">contact@taldius.com</a>
+                </div>
+
+                <div class="fact-item">
+                    <strong>
+                        <span class="lang-fr">Réseaux sociaux</span>
+                        <span class="lang-en">Socials</span>
+                    </strong>
+                    <span>
+                        <a href="https://store.steampowered.com/app/3970010" target="_blank">Steam</a> • 
+                        <a href="https://twitter.com/EctoriderGame" target="_blank">Twitter/X</a> • 
+                        <a href="https://bsky.app/profile/ectorider.com" target="_blank">Bluesky</a> • 
+                        <a href="https://www.instagram.com/ectoridergame/" target="_blank">Instagram</a> • 
+                        <a href="https://www.tiktok.com/@ectorider" target="_blank">Tiktok</a> • 
+                        <a href="https://www.youtube.com/@Taldiuz" target="_blank">YouTube</a>
+                    </span>
+                </div>
+
+                <a href="presskit.zip" class="btn-download">
+                    <span class="lang-fr">Télécharger le kit média (.zip)</span>
+                    <span class="lang-en">Download Press Assets (.zip)</span>
+                </a>
+            </aside>
+
+            <!-- Contenu principal -->
+            <main>
+                <!-- Description -->
+                <section class="description">
+                    <h2>Description</h2>
+                    <p class="lang-fr"><strong>Ectorider</strong> est un jeu de plateforme 3D dynamique mêlant sports extrêmes et tir à la troisième personne. Combattez une armée de robots grâce à votre super-aimant ou utilisez-les pour réaliser des figures spectaculaires en rollers. Sauvez les Ectomorphes et mettez fin au plan diabolique du Professeur Ecto.</p>
+                    <p class="lang-en"><strong>Ectorider</strong> is a fast-paced 3D platformer combining Extreme Sports and Third Person Shooter. Fight a robot army with your super magnet or use them to do insane tricks with your rollerblades. Save the Ectomorphs and stop Professor Ecto's evil plan.</p>
+                </section>
+
+                <!-- Key Features -->
+                <section>
+                    <h2>
+                        <span class="lang-fr">Caractéristiques principales</span>
+                        <span class="lang-en">Key Features</span>
+                    </h2>
+                    
+                    <ul class="features lang-fr">
+                        <li><strong>Pouvoirs électromagnétiques :</strong> Exploitez la puissance d'un aimant futuriste pour attraper, projeter et écraser vos ennemis les uns contre les autres. Découvrez la capacité spéciale de chaque ennemi pour combattre, sauter plus haut ou gagner de la vitesse.</li>
+                        <li><strong>Déplacements extrêmes en rollers :</strong> Dashs, grinds et envols à toute vitesse à travers les niveaux. Enchaînez les figures, les courses murales (wall-runs) et les cascades aériennes pour conserver votre élan.</li>
+                        <li><strong>Combat et mobilité créatifs :</strong> Utilisez les capacités ennemies à votre avantage — tirez, planez, rebondissez et expérimentez un système de déplacement axé sur la physique.</li>
+                        <li><strong>Une histoire captivante :</strong> Parcourez le monde pour sauver les Ectomorphes, découvrez le plan du Professeur Ecto et démantelez son armée de robots.</li>
+                    </ul>
+
+                    <ul class="features lang-en">
+                        <li><strong>Electromagnetic Powers:</strong> Harness the power of a futuristic magnet to grab, throw, and smash enemies into each other. Discover each enemy's special ability to fight, jump higher, or gain speed.</li>
+                        <li><strong>Extreme Roller Movement:</strong> Dash, grind, and soar through levels on high-speed rollerblades. Chain tricks, wall-runs, and aerial stunts to keep your momentum flowing.</li>
+                        <li><strong>Creative Combat & Mobility:</strong> Utilize enemy abilities to your advantage—shoot, glide, bounce, and experiment with physics-driven traversal.</li>
+                        <li><strong>Compelling Story:</strong> Race around the world to save the Ectomorphs, uncover Professor Ecto's plan, and dismantle his robot army.</li>
+                    </ul>
+                </section>
+
+                <!-- Trailer -->
+                <section>
+                    <h2>
+                        <span class="lang-fr">Bande-annonce</span>
+                        <span class="lang-en">Trailer</span>
+                    </h2>
+                    <div class="video-container">
+                        <!-- Remplacez YOUTUBE_VIDEO_ID par l'identifiant de votre vidéo YouTube -->
+                        <iframe src="https://www.youtube-nocookie.com/embed/YOUTUBE_VIDEO_ID" title="Ectorider Trailer" allowfullscreen></iframe>
+                    </div>
+                </section>
+
+                <!-- Captures d'écran -->
+                <section id="screenshots">
+                    <h2>
+                        <span class="lang-fr">Captures d'écran</span>
+                        <span class="lang-en">Screenshots</span>
+                    </h2>
+                    <p class="lang-fr" style="margin-bottom: 1rem; color: var(--text-muted); font-size: 0.9rem;">Cliquez sur une image pour l'afficher en haute résolution.</p>
+                    <p class="lang-en" style="margin-bottom: 1rem; color: var(--text-muted); font-size: 0.9rem;">Click any image to view in full resolution.</p>
+                    
+                    <div class="gallery">
+                        <a href="../assets/Screen01.png" target="_blank"><img src="../assets/Screen01.png" alt="Ectorider Gameplay 1"></a>
+                        <a href="../assets/Screen02.png" target="_blank"><img src="../assets/Screen02.png" alt="Ectorider Gameplay 2"></a>
+                        <a href="../assets/Screen03.png" target="_blank"><img src="../assets/Screen03.png" alt="Ectorider Gameplay 3"></a>
+                        <a href="../assets/Screen04.png" target="_blank"><img src="../assets/Screen04.png" alt="Ectorider Gameplay 4"></a>
+                        <a href="../assets/Screen05.png" target="_blank"><img src="../assets/Screen05.png" alt="Ectorider Gameplay 5"></a>
+                        <a href="../assets/Screen06.png" target="_blank"><img src="../assets/Screen06.png" alt="Ectorider Gameplay 6"></a>
+                        <a href="../assets/Screen07.png" target="_blank"><img src="../assets/Screen07.png" alt="Ectorider Gameplay 7"></a>
+                        <a href="../assets/Screen08.png" target="_blank"><img src="../assets/Screen08.png" alt="Ectorider Gameplay 8"></a>
+                        <a href="../assets/Screen09.png" target="_blank"><img src="../assets/Screen09.png" alt="Ectorider Gameplay 9"></a>
+                        <a href="../assets/Screen10.png" target="_blank"><img src="../assets/Screen10.png" alt="Ectorider Gameplay 10"></a>
+                        <a href="../assets/Screen11.png" target="_blank"><img src="../assets/Screen11.png" alt="Ectorider Gameplay 11"></a>
+                        <a href="../assets/Screen12.png" target="_blank"><img src="../assets/Screen12.png" alt="Ectorider Gameplay 12"></a>
+                    </div>
+                </section>
+
+                <!-- Logos -->
+                <section>
+                    <h2>Logos</h2>
+                    <p class="lang-fr" style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1rem;">Logos PNG sur fond transparent, visuels clés et assets haute résolution.</p>
+                    <p class="lang-en" style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1rem;">Transparent logo PNGs, key art banners, and high-resolution media assets.</p>
+                    
+                    <div class="gallery">
+                        <a href="../assets/Ectorider logo.png" target="_blank"><img src="../assets/Ectorider logo.png" alt="Ectorider Logo"></a>
+                        <a href="../assets/Ectorider_Logo_BW.png" target="_blank"><img src="../assets/Ectorider_Logo_BW.png" alt="Ectorider Logo B&W"></a>
+                        <a href="../assets/Ectorider_Icon.png" target="_blank"><img src="../assets/Ectorider_Icon.png" alt="Ectorider Icon"></a>
+                    </div>
+                </section>
+
+                <!-- Illustrations / Art -->
+                <section>
+                    <h2>
+                        <span class="lang-fr">Illustrations & Key Art</span>
+                        <span class="lang-en">Art & Key Art</span>
+                    </h2>
+                    <p class="lang-fr" style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1rem;">Visuals clés des personnages et visuels promotionnels haute résolution.</p>
+                    <p class="lang-en" style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1rem;">High-resolution promotional character artwork and key visual banners.</p>
+                    
+                    <div class="gallery">
+                        <a href="../assets/Ectorider_Hero_Artwork_04.PNG" target="_blank"><img src="../assets/Ectorider_Hero_Artwork_04.PNG" alt="Hero Art 1"></a>
+                        <a href="../assets/Ectorider_Volt_Artwork_01.PNG" target="_blank"><img src="../assets/Ectorider_Volt_Artwork_01.PNG" alt="Volt Art"></a>
+                        <a href="../assets/Ectorider_Terry_Artwork_01.PNG" target="_blank"><img src="../assets/Ectorider_Terry_Artwork_01.PNG" alt="Terry Art"></a>
+                        <a href="../assets/Ectorider_Ecto_Artwork_01.PNG" target="_blank"><img src="../assets/Ectorider_Ecto_Artwork_01.PNG" alt="Ecto Art"></a>
+                        <a href="../assets/Ectorider_Hero_Artwork_03.PNG" target="_blank"><img src="../assets/Ectorider_Hero_Artwork_03.PNG" alt="Hero Rocket Art"></a>
+                        <a href="../assets/Ectorider_Hero_Sunglasses.png" target="_blank"><img src="../assets/Ectorider_Hero_Sunglasses.png" alt="Hero Sunglasses Art"></a>
+                    </div>
+                </section>
+
+                <!-- Backgrounds -->
+                <section>
+                    <h2>
+                        <span class="lang-fr">Décors & Environnements</span>
+                        <span class="lang-en">Backgrounds & Environments</span>
+                    </h2>
+                    <p class="lang-fr" style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1rem;">Aperçus des environnements et décors des différents niveaux du jeu.</p>
+                    <p class="lang-en" style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1rem;">Previews of environments and background concepts across levels.</p>
+                    
+                    <div class="gallery">
+                        <a href="../assets/Ectorider_TropicalIsland_Background.jpg" target="_blank"><img src="../assets/Ectorider_TropicalIsland_Background.jpg" alt="Tropical Islands"></a>
+                        <a href="../assets/Ectorider_WaveRush_Background.png" target="_blank"><img src="../assets/Ectorider_WaveRush_Background.png" alt="Wave Rush"></a>
+                        <a href="../assets/Ectorider_Town_Background.png" target="_blank"><img src="../assets/Ectorider_Town_Background.png" alt="Ride Plaza"></a>
+                        <a href="../assets/Ectorider_Cave_Background.jpg" target="_blank"><img src="../assets/Ectorider_Cave_Background.jpg" alt="Crystal Grind"></a>
+                        <a href="../assets/Ectorider_Temple_Background.jpg" target="_blank"><img src="../assets/Ectorider_Temple_Background.jpg" alt="Totem Temple"></a>
+                        <a href="../assets/Ectorider_Volcano_Background.jpg" target="_blank"><img src="../assets/Ectorider_Volcano_Background.jpg" alt="Volcano Dive"></a>
+                    </div>
+                </section>
+
+                <!-- Contact -->
+                <section>
+                    <h2>
+                        <span class="lang-fr">Contact & Demandes presse</span>
+                        <span class="lang-en">Contact & Inquiries</span>
+                    </h2>
+                    <p class="lang-fr">Pour toute demande de clé presse, demande d'interview ou renseignement complémentaire :</p>
+                    <p class="lang-en">For press keys, interview requests, or general inquiries, please contact:</p>
+                    
+                    <p style="margin-top: 0.5rem;">
+                        <strong>Email / E-mail :</strong> <a href="mailto:contact@taldius.com" style="color: var(--accent);">contact@taldius.com</a><br>
+                        <strong><span class="lang-fr">Développeur :</span><span class="lang-en">Developer:</span></strong> Taldius
+                    </p>
+                </section>
+            </main>
+        </div>
+
+        <footer>
+            <p class="lang-fr">&copy; Ectorider — Développé par Taldius. Tous droits réservés. <a href="https://www.ectorider.com">Retour au site principal</a></p>
+            <p class="lang-en">&copy; Ectorider — Developed by Taldius. All rights reserved. <a href="https://www.ectorider.com">Back to main site</a></p>
+        </footer>
+    </div>
+
+    <!-- Script de gestion de la langue -->
+    <script>
+        function setLanguage(lang) {
+            document.body.classList.remove('lang-fr', 'lang-en');
+            document.body.classList.add('lang-' + lang);
+            document.documentElement.lang = lang;
+
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.lang === lang);
+            });
+
+            localStorage.setItem('ectorider_press_lang', lang);
+        }
+
+        // Détection initiale : Préférence enregistrée OU langue du navigateur (FR sinon EN par défaut)
+        const savedLang = localStorage.getItem('ectorider_press_lang');
+        const defaultLang = savedLang || (navigator.language.startsWith('fr') ? 'fr' : 'en');
+        setLanguage(defaultLang);
+    </script>
+</body>
+</html>
