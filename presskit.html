@@ -5,15 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ectorider — Press Kit</title>
     <style>
+
         :root {
             --bg-color: #0b0c10;
             --card-bg: #13151c;
             --text-main: #e0e6ed;
             --text-muted: #94a3b8;
-            --accent: #00e5ff;
-            --accent-hover: #33ebff;
+            --accent: #e02d2d;
+            --accent-hover: #ff837e;
             --border: #1e293b;
             --max-width: 1100px;
+            --orange-bg: url("assets/T_stripes_pattern.png");
+            --blue-bg: url("assets/T_stripes_pattern2.png");
+            --font-stack: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
         }
 
         * {
@@ -27,10 +31,23 @@
         body.lang-fr .lang-en { display: none !important; }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
+            font-family: var(--font-stack);
+            background-color: #070a14; /* Deep immersive game background */
+            background-image: 
+                /* Subtle angled structural stripes */
+                repeating-linear-gradient(
+                    -45deg,
+                    rgba(0, 210, 255, 0.015),
+                    rgba(0, 210, 255, 0.015) 20px,
+                    rgba(255, 255, 255, 0.005) 20px,
+                    rgba(255, 255, 255, 0.005) 40px
+                ),
+                /* Atmospheric ambient glow from top center */
+                radial-gradient(circle at 50% 10%, rgba(0, 210, 255, 0.06) 0%, transparent 50%);
+            background-attachment: fixed;
             color: var(--text-main);
             line-height: 1.6;
+            min-height: 100vh;
             padding: 2rem 1rem;
         }
 
@@ -194,7 +211,7 @@
         }
 
         ul.features li::before {
-            content: "✦";
+             content: "▶";
             position: absolute;
             left: 0;
             color: var(--accent);
@@ -253,6 +270,8 @@
         footer a {
             color: var(--text-muted);
         }
+
+ 
     </style>
 </head>
 <body class="lang-fr">
@@ -260,7 +279,9 @@
     <div class="container">
         <header>
             <div>
-                <h1>Ectorider</h1>
+                <a href="index.html">
+            <img src="assets/Ectorider logo_small.png" alt="Ectorider Logo" class="presskit-logo" style="width: 400px; height: auto;">
+        </a>
                 <p>
                     <span class="lang-fr">Kit Presse</span>
                     <span class="lang-en">Press Kit</span>
@@ -348,7 +369,7 @@
                 <!-- Description -->
                 <section class="description">
                     <h2>Description</h2>
-                    <p class="lang-fr"><strong>Ectorider</strong> est un jeu de plateforme 3D dynamique mêlant sports extrêmes et tir à la troisième personne. Combattez une armée de robots grâce à votre super-aimant ou utilisez-les pour réaliser des figures spectaculaires en rollers. Sauvez les Ectomorphes et mettez fin au plan diabolique du Professeur Ecto.</p>
+                    <p class="lang-fr"><strong>Ectorider</strong> est un jeu de plateforme 3D intense mélangeant sports extrêmes et tir à la 3ème personne. Combat une armée de robot avec ton super aimant ou utilise les pour faire des figures incroyables en roller. Sauve les Ectomorphes et met un terme au plan maléfique du Professeur Ecto.</p>
                     <p class="lang-en"><strong>Ectorider</strong> is a fast-paced 3D platformer combining Extreme Sports and Third Person Shooter. Fight a robot army with your super magnet or use them to do insane tricks with your rollerblades. Save the Ectomorphs and stop Professor Ecto's evil plan.</p>
                 </section>
 
@@ -360,17 +381,17 @@
                     </h2>
                     
                     <ul class="features lang-fr">
-                        <li><strong>Pouvoirs électromagnétiques :</strong> Exploitez la puissance d'un aimant futuriste pour attraper, projeter et écraser vos ennemis les uns contre les autres. Découvrez la capacité spéciale de chaque ennemi pour combattre, sauter plus haut ou gagner de la vitesse.</li>
-                        <li><strong>Déplacements extrêmes en rollers :</strong> Dashs, grinds et envols à toute vitesse à travers les niveaux. Enchaînez les figures, les courses murales (wall-runs) et les cascades aériennes pour conserver votre élan.</li>
-                        <li><strong>Combat et mobilité créatifs :</strong> Utilisez les capacités ennemies à votre avantage — tirez, planez, rebondissez et expérimentez un système de déplacement axé sur la physique.</li>
-                        <li><strong>Une histoire captivante :</strong> Parcourez le monde pour sauver les Ectomorphes, découvrez le plan du Professeur Ecto et démantelez son armée de robots.</li>
+                        <li><strong>DU SHOOT ÉLÉCTROMAGNÉTIQUE :</strong> Utilise les pouvoirs du super aimant pour attraper, jeter, te propulser à toute vitesse, t'envoler dans les airs ou encore exploser les robots les uns contre les autres. </li>
+                        <li><strong>DES SENSATIONS EXTRÊMES :</strong> Fonce, grinde et fuse dans les niveau à toute vitesse avec tes rollers. Enchaines les figurines, les wall runs et les cascade aériennes pour converser ton élan tout en ayant du style.</li>
+                        <li><strong>LIBÈRE TA CRÉATIVITÉ :</strong> Découvre les compétences de chaque robot, débloque de nouveaux gadgets et combine les pour trouver des chemins alternatifs dans les niveaux. </li>
+                        <li><strong>TROUVE LES ECTOMORPHES :</strong> L'humanité a été transformé en Ectomorphes par le maléfique Professeur Ecto ! Fonces à pleine vitesse à travers le monde pour les trouver, combattre l'armée d'Ecto et les retransformer en humains !</li>
                     </ul>
 
                     <ul class="features lang-en">
-                        <li><strong>Electromagnetic Powers:</strong> Harness the power of a futuristic magnet to grab, throw, and smash enemies into each other. Discover each enemy's special ability to fight, jump higher, or gain speed.</li>
-                        <li><strong>Extreme Roller Movement:</strong> Dash, grind, and soar through levels on high-speed rollerblades. Chain tricks, wall-runs, and aerial stunts to keep your momentum flowing.</li>
-                        <li><strong>Creative Combat & Mobility:</strong> Utilize enemy abilities to your advantage—shoot, glide, bounce, and experiment with physics-driven traversal.</li>
-                        <li><strong>Compelling Story:</strong> Race around the world to save the Ectomorphs, uncover Professor Ecto's plan, and dismantle his robot army.</li>
+                        <li><strong>ELECTROMAGNETIC SHOOTER:</strong> Use the powers of the super magnet to grab, throw, propell yourself at fullspeed, fly high in the air or smash robots into them.</li>
+                        <li><strong>EXTREME ROLLERBLADING</strong> Dash, grind, and soar through levels on high-speed rollers. Chain tricks, wall-runs, and aerial stunts to keep your momentum flowing and your style sharp.</li>
+                        <li><strong>UNLEASH YOUR CREATIVITY:</strong> Discover each enemies special ability, unlock new gadgets and combine them to find alternate paths into each levels.</li>
+                        <li><strong>FIND THE ECTOMORPHS:</strong> Humanity has been changed to Ectomorphs by the evil Professor Ecto! Race at full speed around the world to find them, fight Ecto's robot army and turn them back into humans.</li>
                     </ul>
                 </section>
 
